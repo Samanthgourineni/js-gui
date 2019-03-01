@@ -15,19 +15,16 @@
 <body>
   <main class="container-fluid">
 
-    <h1>JavaScript for interactive apps!</h1>
-    <h3>Right-click / Inspect, then select console</h3>
+    <h1>Attribute Estimator</h1>
+    <h3>Given count of models and attributesPerResource display total attributes</h3>
 
-    <p>Enter your name:
-      <input id="guest" type="text" value="Eden">
+
+    <p>Enter number of models:
+      <input id="models" type="number" >
     </p>
 
-    <p>Enter first number:
-      <input id="firstNumber" type="number" value="7">
-    </p>
-
-    <p>Enter second number:
-      <input id="secondNumber" type="number" value="12">
+    <p>Enter number of attributes:
+      <input id="attributes" type="number" >
     </p>
 
     <button id="clicker" class="btn btn-primary">Click me!</button>
@@ -41,20 +38,19 @@
 
     console.log('Declare testable functions.....................')
 
-    function add(x, y) {
-      return x + y
+    function mul(models, attributes) {
+      return models * attributes
     }
-    console.log('Defined add=' + add)
+    console.log('Defined mul=' + mul)
 
     console.log('Declare event listeners .......................')
 
     document.getElementById('clicker').addEventListener('click', function () {
-      const s = document.getElementById('guest').value
-      const i = parseInt(document.getElementById('firstNumber').value)
+      const i = parseInt(document.getElementById('models').value)
       console.log('i=' + i)
-      const j = parseInt(document.getElementById('secondNumber').value)
+      const j = parseInt(document.getElementById('attributes').value)
       console.log('j=' + j)
-      const ans = s + ', your sum is ' + add(i, j) + '.'
+      const ans = 'The total attributes are ' + mul(i, j) + '.'
       document.getElementById('result').innerHTML = ans
     })
 
